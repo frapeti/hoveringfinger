@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="fill"
+        android:text="Here you can control the finger hovering status, enabling it here will make hovering work on all installed apps, including web browsers. To use AirView with Samsung apps just enable it normally on settings again."
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmallPopupMenu" />
+
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/hovering_toggle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOff="Hovering disabled"
+            android:textOn="Hovering enabled" />
+
+        <ToggleButton
+            android:id="@+id/pointer_toggle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOff="Pointer disabled"
+            android:textOn="Pointer enabled" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/cb_boot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_bar"
+        android:layout_alignRight="@+id/button_bar"
+        android:layout_below="@+id/button_bar"
+        android:checked="false"
+        android:text="Enable finger hovering on boot" />
+
+    <TextView
+        android:id="@+id/test_zone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/visit_thread_button"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/cb_boot"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Not hovering here :("
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/visit_thread_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adFrame"
+        android:layout_alignLeft="@+id/test_zone"
+        android:layout_alignRight="@+id/test_zone"
+        android:text="Visit thread on XDA" />
+
+    <FrameLayout
+        android:id="@+id/adFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+    </FrameLayout>
+
+</RelativeLayout>
